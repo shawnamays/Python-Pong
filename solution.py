@@ -1,5 +1,5 @@
 import pygame
-pygame.init
+pygame.init()
 
 #the following syntax is how you declare 
 # TWO VARIABLES on the same line in python
@@ -24,9 +24,15 @@ def main():
     while run:
         #the following gets the events like clicking the mouse, keyboard, closing the window.
         for event in pygame.event.get():
+            #first event we want to check is if we are quitting the window. 
+            # it checks on if we hit the close button, so the main loop stops and breaks.
             if event.type == pygame.QUIT:
                 run = False
                 break
 
 
     pygame.quit()
+
+#this ensures we are running this module to call the function
+if __name__ == '__main__':
+    main()
