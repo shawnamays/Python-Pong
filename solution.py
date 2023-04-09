@@ -18,14 +18,30 @@ pygame.display.set_caption("Pong")
 
 def main():
     run = True
-#whenever using a pygame you need a MAIN LOOP.  
-# A main loop is a loop that is constantly running and 
-# is handling everything related to the game, i.e: collision, moving the paddle
+    clock = pygame.time.Clock()
+    #we need a clock is gonna regulate the framerate of our game so it runs at the same pace on every computer
+    FPS = 60
+
+    WHITE = (255,255,255)
+    BLACK = (0,0,0)
+
+    def draw(win):
+        win.fill(WHITE)
+        pygame.display.update()
+        #whenever we do a drawing application we need the display 
+        # to update and perform any of the drawing operations that we've done.
+
+
+    # whenever using a pygame you need a MAIN LOOP.  
+    # A main loop is a loop that is constantly running and 
+    # is handling everything related to the game, i.e: collision, moving the paddle
     while run:
-        #the following gets the events like clicking the mouse, keyboard, closing the window.
+        clock.tick(FPS)
+        draw(WIN)
+            #the following gets the events like clicking the mouse, keyboard, closing the window.
         for event in pygame.event.get():
-            #first event we want to check is if we are quitting the window. 
-            # it checks on if we hit the close button, so the main loop stops and breaks.
+                #first event we want to check is if we are quitting the window. 
+                # it checks on if we hit the close button, so the main loop stops and breaks.
             if event.type == pygame.QUIT:
                 run = False
                 break
