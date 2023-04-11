@@ -14,16 +14,15 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 #this will be the caption at the top of the game that says "Pong"
 pygame.display.set_caption("Pong")
 
-#time for the event loop!
 
-def main():
-    run = True
-    clock = pygame.time.Clock()
-    #we need a clock is gonna regulate the framerate of our game so it runs at the same pace on every computer
-    FPS = 60
+FPS = 60
 
-    WHITE = (255,255,255)
-    BLACK = (0,0,0)
+WHITE = (255,255,255)
+BLACK = (0,0,0)
+
+PADDLE_WIDTH, PADDLE_HEIGHT = 20, 100
+
+##################### P A D D L E   C L A S S ########################
 
 
 class Paddle:
@@ -48,7 +47,7 @@ class Paddle:
         #how to draw a rectangle in python
         #passing through it where I want to draw it, the window, then the color, 
         # then the rectangle which is an x y width and height.  we draw from the left hand corner in python.
-        pygame.draw.rectangle(win, self.COLOR(self.x, self.y, self,width, self.height))
+        pygame.draw.rectangle(win, self.COLOR, (self.x, self.y, self,width, self.height))
 
     def draw(win):
         win.fill(BLACK)
@@ -56,7 +55,11 @@ class Paddle:
         #whenever we do a drawing application we need the display 
         # to update and perform any of the drawing operations that we've done.
 
+def main():
+    run = True
+    clock = pygame.time.Clock()
 
+    left_paddle = Paddle(10, HEIGHT//2 - PADDLE_HEIGHT//2)
     # whenever using a pygame you need a MAIN LOOP.  
     # A main loop is a loop that is constantly running and 
     # is handling everything related to the game, i.e: collision, moving the paddle
