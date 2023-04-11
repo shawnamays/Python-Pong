@@ -59,7 +59,8 @@ def main():
     run = True
     clock = pygame.time.Clock()
 
-    left_paddle = Paddle(10, HEIGHT//2 - PADDLE_HEIGHT//2)
+    left_paddle = Paddle(10, HEIGHT//2 - PADDLE_HEIGHT//2, PADDLE_WIDTH, PADDLE_HEIGHT)
+    right_paddle = Paddle(WIDTH - 10 - PADDLE_WIDTH, HEIGHT//2 - PADDLE_HEIGHT//2, PADDLE_WIDTH, PADDLE_HEIGHT)
     # whenever using a pygame you need a MAIN LOOP.  
     # A main loop is a loop that is constantly running and 
     # is handling everything related to the game, i.e: collision, moving the paddle
