@@ -63,10 +63,11 @@ def main():
     right_paddle = Paddle(WIDTH - 10 - PADDLE_WIDTH, HEIGHT//2 - PADDLE_HEIGHT//2, PADDLE_WIDTH, PADDLE_HEIGHT)
     # whenever using a pygame you need a MAIN LOOP.  
     # A main loop is a loop that is constantly running and 
-    # is handling everything related to the game, i.e: collision, moving the paddle
+    # is handling everything related to the game, 
+    # i.e: collision, moving the paddle
     while run:
         clock.tick(FPS)
-        draw(WIN)
+        draw(WIN, [left_paddle, right_paddle])
             #the following gets the events like clicking the mouse, keyboard, closing the window.
         for event in pygame.event.get():
                 #first event we want to check is if we are quitting the window. 
