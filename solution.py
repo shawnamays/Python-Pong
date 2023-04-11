@@ -27,12 +27,28 @@ def main():
 
 
 class Paddle:
+    COLOR = WHITE
+    #we are making a class because we are going to have multiple paddles 
+    # and we want their properties to be store as an object as to avoid hard coding.
+
+    #initializing a new paddle uses __init__ for this one we will take in x y width and height.  
+    # both paddles need to have different movements to move we want them to move based on where the user moves it with the key
     def __init__(self, x, y, width, height):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
 
+
+        #a method on the paddles is the following:
+
+
+    #draw method is going to literally draw the paddle
+    def draw(self, win):
+        #how to draw a rectangle in python
+        #passing through it where I want to draw it, the window, then the color, 
+        # then the rectangle which is an x y width and height.  we draw from the left hand corner in python.
+        pygame.draw.rectangle(win, self.COLOR(self.x, self.y, self,width, self.height))
 
     def draw(win):
         win.fill(BLACK)
