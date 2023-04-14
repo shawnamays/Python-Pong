@@ -1,6 +1,6 @@
 import pygame
 pygame.init()
-
+#i am trying to push daily and ill work on this later tonight
 #the following syntax is how you declare 
 # TWO VARIABLES on the same line in python
 #this is for our window
